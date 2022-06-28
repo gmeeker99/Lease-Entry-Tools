@@ -4,21 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Lease Entry Tools</title>
+		<link rel="stylesheet" href="./styles.css">
+		<script src="./main.js" defer></script>
 	</head>
 	<body>
 		<h1>Lease Entry Tools</h1>
 		<div class="dateCalc">
-			<input type="text" id="date-input">
-			<label for="date-input">Date</label>
+			<div class="dateCalc__inputs">
+				<input type="text" id="date-input" maxlength="10"/>
+				<label for="date-input">Date</label>
 
-			<input type="number" id="days">
-			<label for="days">Months</label>
+				<input type="number" id="days" />
+				<label for="days">Months</label>
 
-			<input type="number" id="months">
-			<label for="months">Months</label>
+				<input type="number" id="months" />
+				<label for="months">Months</label>
 
-			<input type="number" id="years">
-			<label for="year">Years</label>
+				<input type="number" id="years" />
+				<label for="year">Years</label>
+			</div>
+
+			<div class="dateCalc__outputs">
+				<p class="result-date"></p>
+				<p class="resul-date-minus-one"></p>
+			</div>
+
 		</div>
 	</body>
 </html>
