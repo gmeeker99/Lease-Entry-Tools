@@ -1,0 +1,24 @@
+{
+	"name": "lease-entry-tools",
+	"version": "1.0.0",
+	"source": "index.html",
+	"devDependencies": {
+		"parcel": "^2.6.2"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "parcel -p 8080"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gmeeker99/Lease-Entry-Tools.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gmeeker99/Lease-Entry-Tools/issues"
+	},
+	"homepage": "https://github.com/gmeeker99/Lease-Entry-Tools#readme",
+	"description": ""
+}
