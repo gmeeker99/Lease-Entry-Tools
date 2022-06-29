@@ -1,3 +1,5 @@
+import { add, isValid } from "date-fns"
+
 const parseDateString = dateString => {
 	let dateArray = dateString.split("/")
 	dateArray = dateArray.map(item => {
@@ -10,6 +12,23 @@ const parseDateString = dateString => {
 
 	const jsDate = new Date(parsedYear, parsedMonth, parsedDay)
 
-	console.log(jsDate)
+	if (isValid(jsDate)) {
+		return jsDate
+	}
+	return
 }
-parseDateString("3/6/1999")
+
+const calculateDate = (date, intervals) => {
+	const result = add(date, {
+		days: intervals.days,
+		months: intervals.months,
+		years: intervals.years,
+	})
+
+	return result
+}
+
+module.exports = {
+	parseDateString,
+	calculateDate,
+}
