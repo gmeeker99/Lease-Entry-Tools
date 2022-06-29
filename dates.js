@@ -1,4 +1,4 @@
-import { add, isValid } from "date-fns"
+import { add, isValid, format } from "date-fns"
 
 const parseDateString = dateString => {
 	let dateArray = dateString.split("/")
@@ -20,12 +20,17 @@ const parseDateString = dateString => {
 
 const calculateDate = (date, intervals) => {
 	const result = add(date, {
-		days: intervals.days,
-		months: intervals.months,
-		years: intervals.years,
+		days: intervals.days || 0,
+		months: intervals.months || 0,
+		years: intervals.years || 0,
 	})
 
-	return result
+	const dateObj = {
+		resultJSDate: result,
+		formattedDate: format(result, "MM/dd/yyyy")
+	}
+
+	return dateObj
 }
 
 module.exports = {
