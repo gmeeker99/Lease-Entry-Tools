@@ -1,7 +1,7 @@
 {
 	"name": "lease-entry-tools",
 	"version": "1.0.0",
-	"source": "/index.html",
+	"source": "./src/index.html",
 	"devDependencies": {
 		"parcel": "^2.6.2"
 	},
