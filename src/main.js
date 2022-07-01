@@ -6,7 +6,7 @@ const dateCalcInputDate = document.getElementById("date-input")
 const dateCalcOutputs = document.querySelectorAll(".dateCalc__outputs > *")
 dateCalcInputs.forEach(input => {
 	input.addEventListener("keyup", e => {
-		// guard clause: if date-input length is not > 10
+		// guard clause: continue only if date is entered
 		if (
 			e.target.id === dateCalcInputDate.id &&
 			e.target.value.length < 10
@@ -43,4 +43,34 @@ dateCalcInputs.forEach(input => {
 		dateCalcResult.innerHTML = dateResult.formattedDate
 		dateCalcResultMinusOne.innerHTML = dateResultMinusOne.formattedDate
 	})
+})
+
+const rmLineBreaksMainButton = document.getElementById("rm-line-breaks-btn")
+rmLineBreaksMainButton.addEventListener("click", e => {
+	const newTextString = document
+		.getElementById("oldText")
+		.value.replace(/(\r\n|\n|\r)/gm, " ")
+	document.getElementById("newText").value = newTextString
+})
+
+const rmLineBreaksResetButton = document.getElementById("rm-line-breaks-reset")
+rmLineBreaksResetButton.addEventListener("click", e => {
+	document.getElementById("newText").value = ""
+	document.getElementById("oldText").value = ""
+	document.getElementById("oldText").focus()
+})
+
+const rmLineBreaksCopyButton = document.getElementById(
+	"rm-line-breaks-copy-btn"
+)
+rmLineBreaksCopyButton.addEventListener("click", e => {
+	document.getElementById("newText").select()
+	const newText = document.getElementById("newText").value
+
+	navigator.clipboard.writeText(newText).then(
+		onDone => {},
+		onError => {
+			console.log("Unable to copy contents to clipboard")
+		}
+	)
 })

@@ -7,6 +7,9 @@ p {
 	height: 50px;
 	background-color: blueviolet;
 	text-align: center;
-	vertical-align: middle;
 	color: white;
+}
+
+input[type='textarea'] {
+	width: 50%;
 }
