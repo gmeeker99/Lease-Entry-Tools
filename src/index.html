@@ -4,27 +4,41 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title>Lease Entry Tools</title>
-		<link rel="stylesheet" href="../styles.css" />
+		<link rel="stylesheet" href="./styles.css" />
 		<script type="module" src="./main.js" defer></script>
 	</head>
 	<body>
 		<h1>Lease Entry Tools</h1>
 		<div class="dateCalc">
-			<div class="dateCalc__inputs">
-				<input type="text" id="date-input" maxlength="10" />
-				<label for="date-input">Date</label>
+			<h2>Date Calculator</h2>
+			<div class="dateCalc__inputs-container">
+				<div class="widget__input-container">
+					<label for="date-input">Date</label>
+					<input
+						class="widget__input"
+						type="text"
+						id="date-input"
+						maxlength="10"
+					/>
+				</div>
 
-				<input type="number" id="days" />
-				<label for="days">Days</label>
+				<div class="widget__input-container">
+					<label for="days">Days</label>
+					<input class="widget__input" type="number" id="days" />
+				</div>
 
-				<input type="number" id="months" />
-				<label for="months">Months</label>
+				<div class="widget__input-container">
+					<label for="months">Months</label>
+					<input class="widget__input" type="number" id="months" />
+				</div>
 
-				<input type="number" id="years" />
-				<label for="year">Years</label>
+				<div class="widget__input-container">
+					<label for="year">Years</label>
+					<input class="widget__input" type="number" id="years" />
+				</div>
 			</div>
 
-			<div class="dateCalc__outputs">
+			<div class="dateCalc__outputs-container">
 				<p class="result-date"></p>
 				<p class="resul-date-minus-one"></p>
 			</div>
@@ -40,10 +54,10 @@
 			></textarea>
 			<button id="rm-line-breaks-btn">Remove Breaks</button>
 			<textarea
-			name="newText"
-			id="newText"
-			cols="30"
-			rows="10"
+				name="newText"
+				id="newText"
+				cols="30"
+				rows="10"
 			></textarea>
 			<button id="rm-line-breaks-reset">Reset</button>
 			<button id="rm-line-breaks-copy-btn">Copy</button>

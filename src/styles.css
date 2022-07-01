@@ -1,0 +1,72 @@
+:root {
+	--red-100: hsl(0, 100, 75);
+	--red-200: hsl(0, 100, 65);
+	--red-300: hsl(0, 100, 50);
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	background-color: hsl(204, 66%, 40%);
+}
+
+h1 {
+	color: white;
+	font-weight: 100;
+}
+
+.dateCalc {
+	background-color: beige;
+}
+
+.widget__input-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.dateCalc__inputs-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 0 15%;
+}
+
+.widget__input {
+	width: 10rem;
+	border: solid black 1px;
+	filter: drop-shadow(3px 5px 4px rgb(129, 129, 129));
+}
+
+p {
+	width: 100px;
+	height: 50px;
+	background-color: blueviolet;
+	text-align: center;
+	color: white;
+}
+
+input[type="textarea"] {
+	width: 50%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}

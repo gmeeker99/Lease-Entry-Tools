@@ -3,7 +3,9 @@ import { parseDateString, calculateDate } from "./dates.js"
 // main date calculator events listeners
 const dateCalcInputs = document.querySelectorAll(".dateCalc input")
 const dateCalcInputDate = document.getElementById("date-input")
-const dateCalcOutputs = document.querySelectorAll(".dateCalc__outputs > *")
+const dateCalcOutputs = document.querySelectorAll(
+	".dateCalc__outputs-container > *"
+)
 dateCalcInputs.forEach(input => {
 	input.addEventListener("keyup", e => {
 		// guard clause: continue only if date is entered
