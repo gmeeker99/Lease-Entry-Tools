@@ -16,7 +16,7 @@ html {
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 h1 {
@@ -37,11 +37,23 @@ label {
 	color: rgb(91 118 123);
 }
 
-.dateCalc {
+.widget {
 	background-color: hsl(0, 0%, 95%);
-	border: solid 5px hsl(25, 70%, 60%);
+	border: solid 5px hsl(25, 70%, 50%);
 	border-radius: 10px;
 	overflow: hidden;
+	margin: 0 20%;
+}
+
+.rm-line-breaks {
+	margin-top: 3rem;
+}
+
+.widget__inputs-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 20%;
 }
 
 .widget__input-container {
@@ -49,30 +61,65 @@ label {
 	flex-direction: column;
 }
 
-.dateCalc__inputs-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	padding: 0 15%;
-}
-
 .widget__input {
 	width: 10rem;
 	border: solid black 1px;
 	filter: drop-shadow(0px 3px 2px rgb(129, 129, 129));
-	height: 1.5rem;
+	height: 2rem;
 }
 
-p {
-	width: 100px;
-	height: 50px;
-	background-color: blueviolet;
+.widget__input:focus {
+	outline: none;
+}
+
+.dateCalc__outputs-container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	justify-content: space-around;
+	margin: 2rem 30%;
+}
+
+#days,
+#months,
+#years {
+	width: 5rem;
 	text-align: center;
-	color: white;
 }
 
-input[type="textarea"] {
-	width: 50%;
+.widget__output {
+	width: 10rem;
+	min-height: 41.5px;
+	height: auto;
+	background-color: hsl(25, 70%, 80%);
+	color: black;
+	border: solid hsl(0, 0%, 55%) 1.5px;
+	border-radius: 25px;
+	text-align: center;
+	padding: 0.5rem 0;
+}
+
+.widget__output:hover {
+	background-color: hsl(25, 70%, 70%);
+	cursor: pointer;
+}
+
+.widget__output:active {
+	background-color: hsl(25, 70%, 60%);
+}
+
+.rm-line-breaks__container {
+	display: flex;
+	flex-direction: column;
+}
+
+.textarea {
+	margin: 0 10%;
+}
+
+.widget__button {
+	margin: 1rem;
+	width: fit-content;
 }
 
 /* Chrome, Safari, Edge, Opera */

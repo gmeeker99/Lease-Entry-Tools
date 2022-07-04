@@ -1,4 +1,5 @@
 import { parseDateString, calculateDate } from "./dates.js"
+import { copyText, dispCopyMessage } from "./helper.js"
 
 // main date calculator events listeners
 const dateCalcInputs = document.querySelectorAll(".dateCalc input")
@@ -6,21 +7,14 @@ const dateCalcInputDate = document.getElementById("date-input")
 const dateCalcOutputs = document.querySelectorAll(
 	".dateCalc__outputs-container > *"
 )
+
+// date calculator main
 dateCalcInputs.forEach(input => {
 	input.addEventListener("keyup", e => {
-		// guard clause: continue only if date is entered
-		if (
-			e.target.id === dateCalcInputDate.id &&
-			e.target.value.length < 10
-		) {
-			return
-		}
-
 		let inputDate = dateCalcInputDate.value
 		inputDate = parseDateString(inputDate)
 
 		if (!inputDate) {
-			console.log("bad Date")
 			return
 		}
 
@@ -55,6 +49,7 @@ rmLineBreaksMainButton.addEventListener("click", e => {
 	document.getElementById("newText").value = newTextString
 })
 
+// This controls the remove line breaks reset button
 const rmLineBreaksResetButton = document.getElementById("rm-line-breaks-reset")
 rmLineBreaksResetButton.addEventListener("click", e => {
 	document.getElementById("newText").value = ""
@@ -62,17 +57,19 @@ rmLineBreaksResetButton.addEventListener("click", e => {
 	document.getElementById("oldText").focus()
 })
 
+// This controls the remove line breaks copy button
 const rmLineBreaksCopyButton = document.getElementById(
 	"rm-line-breaks-copy-btn"
 )
 rmLineBreaksCopyButton.addEventListener("click", e => {
 	document.getElementById("newText").select()
-	const newText = document.getElementById("newText").value
+	copyText(document.getElementById("newText").value)
+})
 
-	navigator.clipboard.writeText(newText).then(
-		onDone => {},
-		onError => {
-			console.log("Unable to copy contents to clipboard")
-		}
-	)
+const copyableElements = document.querySelectorAll(".copyable")
+copyableElements.forEach(element => {
+	element.addEventListener("click", e => {
+		copyText(e.target.innerHTML)
+		dispCopyMessage(e.target)
+	})
 })

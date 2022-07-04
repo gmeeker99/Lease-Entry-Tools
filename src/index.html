@@ -9,11 +9,13 @@
 	</head>
 	<body>
 		<h1>Lease Entry Tools</h1>
-		<div class="dateCalc">
+		<div class="widget dateCalc">
 			<h2>Date Calculator</h2>
-			<div class="dateCalc__inputs-container">
+			<div class="widget__inputs-container">
 				<div class="widget__input-container">
-					<label for="date-input">Date</label>
+					<label class="widget__input-label" for="date-input"
+						>Date</label
+					>
 					<input
 						class="widget__input"
 						type="text"
@@ -23,44 +25,50 @@
 				</div>
 
 				<div class="widget__input-container">
-					<label for="days">Days</label>
+					<label class="widget__input-label" for="days">Days</label>
 					<input class="widget__input" type="number" id="days" />
 				</div>
 
 				<div class="widget__input-container">
-					<label for="months">Months</label>
+					<label class="widget__input-label" for="months"
+						>Months</label
+					>
 					<input class="widget__input" type="number" id="months" />
 				</div>
 
 				<div class="widget__input-container">
-					<label for="year">Years</label>
+					<label class="widget__input-label" for="year">Years</label>
 					<input class="widget__input" type="number" id="years" />
 				</div>
 			</div>
 
 			<div class="dateCalc__outputs-container">
-				<p class="result-date"></p>
-				<p class="resul-date-minus-one"></p>
+				<p class="widget__output result-date copyable"></p>
+				<p class="widget__output result-date-minus-one copyable"></p>
 			</div>
 		</div>
 
-		<div class="rm-line-breaks">
+		<div class="widget rm-line-breaks">
 			<h2>Remove Line Breaks</h2>
-			<textarea
-				name="oldText"
-				id="oldText"
-				cols="30"
-				rows="10"
-			></textarea>
-			<button id="rm-line-breaks-btn">Remove Breaks</button>
-			<textarea
-				name="newText"
-				id="newText"
-				cols="30"
-				rows="10"
-			></textarea>
-			<button id="rm-line-breaks-reset">Reset</button>
-			<button id="rm-line-breaks-copy-btn">Copy</button>
+			<div class="rm-line-breaks__container">
+				<textarea
+					class="textarea"
+					name="oldText"
+					id="oldText"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button class="widget__button" id="rm-line-breaks-btn">Remove Breaks</button>
+				<textarea
+					class="textarea"
+					name="newText"
+					id="newText"
+					cols="30"
+					rows="10"
+				></textarea>
+				<button class="widget__button" id="rm-line-breaks-reset">Reset</button>
+				<button class="widget__button" id="rm-line-breaks-copy-btn">Copy</button>
+			</div>
 		</div>
 	</body>
 </html>

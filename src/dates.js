@@ -27,9 +27,8 @@ const calculateDate = (date, intervals) => {
 
 	const dateObj = {
 		resultJSDate: result,
-		formattedDate: format(result, "MM/dd/yyyy")
+		formattedDate: format(result, "MM/dd/yyyy"),
 	}
-
 	return dateObj
 }
 
