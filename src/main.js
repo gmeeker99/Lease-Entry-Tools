@@ -5,16 +5,22 @@ import { copyText, dispCopyMessage } from "./helper.js"
 const dateCalcInputs = document.querySelectorAll(".dateCalc input")
 const dateCalcInputDate = document.getElementById("date-input")
 const dateCalcOutputs = document.querySelectorAll(
-	".dateCalc__outputs-container > *"
+	".dateCalc .widget__outputs-container > *"
 )
 
 // date calculator main
 dateCalcInputs.forEach(input => {
 	input.addEventListener("keyup", e => {
 		let inputDate = dateCalcInputDate.value
+		if (inputDate.length === 0) {
+			dateCalcOutputs[0].innerHTML = ""
+			dateCalcOutputs[1].innerHTML = ""
+			return
+		}
 		inputDate = parseDateString(inputDate)
-
 		if (!inputDate) {
+			dateCalcOutputs[0].innerHTML = ""
+			dateCalcOutputs[1].innerHTML = ""
 			return
 		}
 

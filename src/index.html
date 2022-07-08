@@ -8,66 +8,88 @@
 		<script type="module" src="./main.js" defer></script>
 	</head>
 	<body>
-		<h1>Lease Entry Tools</h1>
-		<div class="widget dateCalc">
-			<h2>Date Calculator</h2>
-			<div class="widget__inputs-container">
-				<div class="widget__input-container">
-					<label class="widget__input-label" for="date-input"
-						>Date</label
-					>
-					<input
-						class="widget__input"
-						type="text"
-						id="date-input"
-						maxlength="10"
-					/>
+		<header>
+			<h1>Lease Entry Tools</h1>
+		</header>
+		<div class="main">
+			<div class="widget dateCalc">
+				<h2>Date Calculator</h2>
+				<div class="widget__inputs-container">
+					<div class="widget__input-container">
+						<label class="widget__input-label" for="date-input"
+							>Date</label
+						>
+						<input
+							class="widget__input"
+							type="text"
+							id="date-input"
+							maxlength="10"
+						/>
+					</div>
+
+					<div class="widget__input-container">
+						<label class="widget__input-label" for="days"
+							>Days</label
+						>
+						<input class="widget__input" type="number" id="days" />
+					</div>
+
+					<div class="widget__input-container">
+						<label class="widget__input-label" for="months"
+							>Months</label
+						>
+						<input
+							class="widget__input"
+							type="number"
+							id="months"
+						/>
+					</div>
+
+					<div class="widget__input-container">
+						<label class="widget__input-label" for="year"
+							>Years</label
+						>
+						<input class="widget__input" type="number" id="years" />
+					</div>
 				</div>
 
-				<div class="widget__input-container">
-					<label class="widget__input-label" for="days">Days</label>
-					<input class="widget__input" type="number" id="days" />
-				</div>
-
-				<div class="widget__input-container">
-					<label class="widget__input-label" for="months"
-						>Months</label
-					>
-					<input class="widget__input" type="number" id="months" />
-				</div>
-
-				<div class="widget__input-container">
-					<label class="widget__input-label" for="year">Years</label>
-					<input class="widget__input" type="number" id="years" />
+				<div class="widget__outputs-container">
+					<p class="widget__output result-date copyable"></p>
+					<p
+						class="widget__output result-date-minus-one copyable"
+					></p>
 				</div>
 			</div>
 
-			<div class="dateCalc__outputs-container">
-				<p class="widget__output result-date copyable"></p>
-				<p class="widget__output result-date-minus-one copyable"></p>
-			</div>
-		</div>
-
-		<div class="widget rm-line-breaks">
-			<h2>Remove Line Breaks</h2>
-			<div class="rm-line-breaks__container">
-				<textarea
-					class="textarea"
-					name="oldText"
-					id="oldText"
-					cols="30"
-					rows="10"
-				></textarea>
-				<button class="widget__button" id="rm-line-breaks-btn">Remove Breaks</button>
-				<textarea
-					class="textarea"
-					name="newText"
-					id="newText"
-					cols="30"
-					rows="10"
-				></textarea>
-				<button class="widget__button" id="rm-line-breaks-reset">Reset</button>
-				<button class="widget__button" id="rm-line-breaks-copy-btn">Copy</button>
+			<div class="widget rm-line-breaks">
+				<h2>Remove Line Breaks</h2>
+				<div class="rm-line-breaks__container">
+					<textarea
+						class="textarea"
+						name="oldText"
+						id="oldText"
+						cols="30"
+						rows="10"
+						style="resize: none"
+					></textarea>
+					<button class="widget__button" id="rm-line-breaks-btn">
+						Remove Breaks
+					</button>
+					<textarea
+						class="textarea widget__output"
+						name="newText"
+						id="newText"
+						cols="30"
+						rows="10"
+						style="resize: none"
+					></textarea>
+					<button class="widget__button" id="rm-line-breaks-reset">
+						Reset
+					</button>
+					<button class="widget__button" id="rm-line-breaks-copy-btn">
+						Copy
+					</button>
+				</div>
 			</div>
 		</div>
 	</body>
